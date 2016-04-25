@@ -1,0 +1,25 @@
+<div class="container main-container">
+	
+	<div class="row text-center">
+		<div class="col-xs-12">
+			<h1>Faltan</h1>
+
+			<time-element number="{{ targetTime | amDifference : nowTime : 'days' }}" tag="días"></time-element>
+			<time-element number="
+			{{ ((targetTime | amDifference : nowTime : 'hours') - (targetTime | amDifference : nowTime : 'days') * 24 + 1) }}" tag="horas"></time-element>
+			<time-element number="{{ targetTime | amDifference : nowTime | date : 'mm'  }}" tag="min"></time-element>
+			<time-element number="{{ targetTime | amDifference : nowTime | date : 'ss'  }}" tag="seg"></time-element>
+			
+			<div class="row">
+				<div class="col-xs-12">
+					<h1>Unión de Manos</h1>
+					<img class="img-responsive" src="/images/logo388.png" alt="Crixa y Osiel"/>
+					<h2>{{targetTime | date:"EEEE dd 'de' MMMM 'de' yyyy, HH:mm 'hrs'"}}</h2>
+					<p>TEQUISQUIAPAN, QUERÉTARO</p>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+</div>
