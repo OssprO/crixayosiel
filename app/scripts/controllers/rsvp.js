@@ -8,10 +8,37 @@
  * Controller of the webApp
  */
 angular.module('webApp')
-  .controller('RSVPCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+	.controller('RSVPCtrl', ['$scope', 'RSVPService', function ($scope, RSVPService) {
+		$scope.registroObj = {
+			nombre: '',
+			email: '',
+			estado: '',
+			respuesta: ''
+		};
+
+
+    $scope.reset = function() {
+    	$scope.obj = {
+	        nombre: '',
+			email: '',
+			estado: '',
+			respuesta: ''
+	    };
+	};
+
+	$scope.submit = function() {
+		RSVPService.submit();
+		/*
+			.then(
+				function(data){
+					console.log(data);
+		        //$scope.data.artistData = data;
+		      },function(data){
+		        //alert(data);
+		        	console.log(data);
+		      }
+		    );
+		*/
+	};
+      
+}]);

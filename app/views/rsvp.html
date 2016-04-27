@@ -6,17 +6,21 @@
 	</div>
 	<div class="row text-center">
 		<div class="col-xs-12 col-sm-4 col-sm-offset-4">
-			<form class="form-horizontal" role="form">
-				
-				<md-radio-group ng-model="">
+			<form class="form-horizontal" role="form" ng-submit="submit()">
+				<p>
+					Este registro es personal y será agregado a la lista de acceso del fraccionamiento. Agrega un registro por asistente.	
+				</p>
+
+				<br/>
+				<md-radio-group ng-model="registroObj.respuesta">
 					<md-radio-button value="true" style="display: inline;"> Si</md-radio-button>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<md-radio-button value="false" style="display: inline;"> No</md-radio-button>
 				</md-radio-group>
 
 	        	<md-input-container class="md-block">
-					<label>Nombre</label>
-					<input required name="name" ng-model="">
+					<label>Nombre Completo</label>
+					<input required name="name" ng-model="registroObj.nombre">
 					<div ng-messages="projectForm.clientName.$error">
 						<div ng-message="required">Es necesario que nos digas quién eres.</div>
 					</div>
@@ -24,7 +28,7 @@
 
 				<md-input-container class="md-block">
 					<label>Email</label>
-					<input required type="email" name="email" ng-model=""
+					<input required type="email" name="email" ng-model="registroObj.email"
 					minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
 					<div ng-messages="projectForm.clientEmail.$error" role="alert">
 						<div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
