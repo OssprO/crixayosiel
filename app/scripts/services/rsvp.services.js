@@ -8,9 +8,9 @@
  * Service of the webApp
  */
 angular.module('webApp')
-	.factory('RSVPService', function ($http, $q) {
+	.factory('RSVPService', function () {
 		var service = {};
-
+		/*
 		service.saveEntry = function(entryData){
 			$http({
 				method: 'post',
@@ -19,7 +19,7 @@ angular.module('webApp')
 				headers: {'Content-Type': 'application/x-www-form-urlencoded'}
 		    }).
 		    success(function(data, status, headers, config) {
-		    	/*
+		    	
 		    	if(data.success){
 		    		if( $scope.editMode ){
 		    			$scope.post.users[$scope.index].id = data.id;
@@ -43,13 +43,14 @@ angular.module('webApp')
 		    	}else{
 		    		$scope.messageFailure(data.message);
 		    	}
-		    	*/
+		    	
 		    }).
 		    error(function(data, status, headers, config) {
 		        console.log(data);
 		    });
 
 		};
+		*/
 
 		return service;
 	});
